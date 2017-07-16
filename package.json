@@ -5,7 +5,12 @@
   "main": "index.js",
   "author": "Sebastián Silva",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server -w"
+  },
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
@@ -16,12 +21,19 @@
     "redux-logger": "^3.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "2.2.1"
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "isomorphic-fetch": "^2.2.1",
     "react": "15.4.2",
     "react-dom": "15.4.2",
+    "react-redux": "5.0.2",
+    "react-router": "3.0.2",
+    "react-router-redux": "4.0.8",
     "redux": "3.0.2",
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0"
   }
 }
