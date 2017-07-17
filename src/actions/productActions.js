@@ -58,7 +58,7 @@ export function saveProductFailure (error) {
 // ACTION creators (Async)
 export function fetchProducts() {
 
-    return async (dispatch => {
+    return async (dispatch) => {
         dispatch(() => {
             return {
                 type: FETCH_PRODUCTS_INIT
@@ -72,12 +72,12 @@ export function fetchProducts() {
         } catch (error) {
             return dispatch( fetchProductsFailure(error));
         }
-    });
+    };
 }
 
 export function fetchProduct( ProductId ) {
 
-    return async (dispatch => {
+    return async (dispatch) => {
         dispatch(() => {
             return {
                 type: FETCH_PRODUCT_INIT
@@ -87,15 +87,15 @@ export function fetchProduct( ProductId ) {
         try {
             const data = await API.products.getSingle( ProductId );
             return dispatch( fetchProductSuccess(data.product) );
-        } catch (error)
+        } catch (error) {
             return dispatch( fetchProductFailure(error) );
         }
-    });
+    };
 }
 
 export function saveProduct(product) {
 
-    return async (dispatch => {
+    return async (dispatch) => {
         dispatch(() => {
             return {
                 type: SAVE_PRODUCT_INIT
@@ -108,5 +108,5 @@ export function saveProduct(product) {
         } catch (error) {
             return dispatch( saveProductFailure(error) );
         }
-    });
+    };
 }
