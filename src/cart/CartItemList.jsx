@@ -3,13 +3,15 @@ import CartItem from './CartItem';
 import uuid from 'uuid';
 
 const CartItemList = ({
-    items
+    items,
+    onRemoveItem
 }) => (
     <div className="list-group">
         {
             items.map(item => (
                 <CartItem
                     key={uuid.v4()}
+                    onRemoveItem={onRemoveItem}
                     {...item}
                 />
             )).reverse()
@@ -22,7 +24,8 @@ CartItemList.defaultProps = {
 };
 
 CartItemList.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.object)
+    items: PropTypes.arrayOf(PropTypes.object),
+    onRemoveItem: PropTypes.func.isRequired
 };
 
 export default CartItemList;

@@ -5,7 +5,8 @@ const CartItem = ({
     name,
     description,
     image,
-    price
+    price,
+    onRemoveItem
 }) => (
     <div className="list-group-item list-group-item-action flex-row justify-content-between">
         <figure classname='d-flex'>
@@ -20,8 +21,10 @@ const CartItem = ({
         </div>
 
         <small className="d-flex text-muted">
-            <button className="btn btn-danger">
-                &times;
+            <button
+                className="btn btn-danger"
+                onClick={()=> onRemoveItem(_id)} >
+                 &times;
             </button>
         </small>
     </div>
