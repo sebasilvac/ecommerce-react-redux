@@ -9,7 +9,7 @@ const CartItem = ({
     onRemoveItem
 }) => (
     <div className="list-group-item list-group-item-action flex-row justify-content-between">
-        <figure classname='d-flex'>
+        <figure className='d-flex'>
             <img height="100" src={image} alt={name} />
         </figure>
 
