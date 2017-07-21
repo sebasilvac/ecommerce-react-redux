@@ -41,9 +41,10 @@ export function fetchProductFailure (error) {
     };
 }
 
-export function saveProductSuccess () {
+export function saveProductSuccess (product) {
     return {
-        type: SAVE_PRODUCT_SUCCESS
+        type: SAVE_PRODUCT_SUCCESS,
+        payload: product
     };
 }
 
@@ -103,8 +104,8 @@ export function saveProduct(product) {
         });
 
         try {
-            await API.products.save( product );
-            return dispatch( savProductSuccess() );
+            const data = await API.products.save( product );
+            return dispatch( saveProductSuccess(data.product) );
         } catch (error) {
             return dispatch( saveProductFailure(error) );
         }
